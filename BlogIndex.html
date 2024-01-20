@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+
+<style id="webmakerstyle">
+
+</style>
+</head>
+<body>
+<html>
+<head>
+  
+<style>
+  body {
+    background-color: black;
+  }
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+</style>
+</head>
+<!---Particle firework like exploision code. typerror somewhere here?? needs heavy fixing, sometimes the exploision won't be on the cursor location. 🢃🢃🢃 --->
+<body>
+  <canvas id="canvas"></canvas>
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    const particles = [];
+    const colors = ['#FF1461', '#18FF92', '#5A87FF', '#FBF38C'];
+    function randomIntFromRange(min, max) {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+    function randomColor(colors) {
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+    function Particle(x, y, radius, color, velocity) {
+      this.x = x;
+      this.y = y;
+      this.radius = radius;
+      this.color = color;
+      this.velocity = velocity;
+      this.alpha = 1;
+      this.draw = function() {
+        ctx.save();
+        ctx.globalAlpha = this.alpha;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+        ctx.restore();
+      }
+      this.update = function() {
+        this.draw();
+        this.velocity.x *= 0.99;
+        this.velocity.y *= 0.99;
+        this.x += this.velocity.x;
+        this.y += this.velocity.y;
+        this.alpha -= 0.011;
+      }
+    }
+    window.addEventListener('click', function(event) {
+      const x = event.clientX;
+      const y = event.clientY;
+      for (let i = 0; i < 45; i++) {
+        const radius = Math.random() * 2.5;
+        const color = randomColor(colors);
+        const velocity = {
+          x: (Math.random() - 0.5) * (Math.random() * 5),
+          y: (Math.random() - 0.45) * (Math.random() * 5)
+        }
+        particles.push(new Particle(x, y, radius, color, velocity));
+      }
+    });
+    function animate() {
+      requestAnimationFrame(animate);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(function(particle, index) {
+        if (particle.alpha <= 0) {
+          particles.splice(index, 1);
+        } else {
+          particle.update();
+        }
+      });
+    }
+    animate();
+  </script>
+
+<head>
+  <title>Blog</title>
+  <style>
+a:link {
+  color: deepskyblue;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: deepskyblue;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: dodgerblue;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+</style>
+<!---Defining everthing 🢃🢃🢃 --->
+  <style>
+    body {
+      background-color: #2a2b2e;
+      color: #fff;
+      font-family: 'Varela Round', Arial, sans-serif;
+      font-weight: normal;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      margin: 18px;
+    }
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding-left: 10px; 
+    }
+
+    .post {
+      border: 1.5px solid #ccc;
+      padding: 13px;
+      border-radius: 6px;
+      box-shadow: 0 0 7.3px #ccc;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+      position: relative; 
+      z-index: 1; 
+      cursor: pointer; 
+    }
+
+    .post:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 12.5px #ccc; 
+    }
+
+    .post.huge { 
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 999;
+      background-color: #2a2b2e;
+      border: none;
+      border-radius: 0;
+      padding: 20px;
+      box-sizing: border-box;
+      overflow-y: auto;
+    }
+
+    .post.huge h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: #fff; 
+      font-weight: normal;
+    }
+
+    .post.huge p:first-child {
+      color: #ffffff; 
+      font-size: 16px;
+      margin-bottom: 10px;
+      font-weight: normal;
+    }
+
+    .post.huge p:last-child {
+      color: #ffffff; 
+      font-size: 16px;
+      font-weight: normal;
+    }
+
+    .post.huge .expanded-paragraph {
+      display: block;
+      border: 1px solid #ccc; 
+      padding: 10px; 
+      border-radius: 5px; 
+      box-shadow: 0 0 4px #ffffff; 
+      background-color: rgba(100, 100, 100, 0.2); 
+      text-align: left; 
+      font-weight: normal;
+      margin-top: 10px; 
+      width: fit-content; 
+    }
+
+    .left img {
+      width: 150px;
+      height: 150px;
+      border-radius: 80%;
+      box-shadow: 0 0 18px rgba(0, 0, 0, 0.3);
+      filter: drop-shadow(0 0 5px rgba(0, 0, 0, 1.2)); 
+      transition: transform 0.3s ease-in-out; 
+    }
+
+    .left img:hover {
+      transform: scale(1.1); \
+    }
+
+    .left img:active {
+      transform: scale(0.9); 
+    }
+
+    .left p:not(:last-child) {
+      color: #ffc0cb; 
+      font-weight: normal;
+    }
+
+    .post.huge:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+    .tags {
+      display: flex;
+      justify-content: flex-start;
+      gap: 5px;
+      margin-top: 10px;
+    }
+
+    .tag {
+      background-color: #ffff99; 
+      color: #665200; 
+      font-size: 13px;
+      padding: 6px;
+      border-radius: 60px;
+      font-weight: normal;
+    }
+    
+.tag2 {
+      background-color: #759aff; 
+      color: #002999;
+      font-size: 13px;
+      padding: 6px;
+      border-radius: 60px;
+      font-weight: normal;
+    }
+        
+.tag3 {
+      background-color: #ff80aa; 
+      color: #80002a;
+      font-size: 13px;
+      padding: 6px;
+      border-radius: 60px;
+      font-weight: normal;
+    }
+    
+    .tag4 {
+      background-color: #80ffcc; 
+      color: #004d2e;
+      font-size: 13px;
+      padding: 6px;
+      border-radius: 60px;
+      font-weight: normal;
+    }
+    
+    .expanded-paragraph {
+      display: none;
+      margin-top: 10px;
+      font-weight: normal
+        ;
+    }
+  </style>
+<!---Script for post opening. DO NOT MESS WITH. 🢃🢃🢃 --->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const posts = document.querySelectorAll('.post');
+
+      posts.forEach(post => {
+        post.addEventListener('click', () => {
+          post.classList.toggle('huge');
+          const expandedParagraph = post.querySelector('.expanded-paragraph');
+          if (expandedParagraph.style.display === 'block') {
+            expandedParagraph.style.display = 'none';
+          } else {
+            expandedParagraph.style.display = 'block';
+          }
+        });
+      });
+<!---uneeded code thatis causing typerror, but can't be removed or posts can't be opened ;(--->
+      subscribeButton.addEventListener('click', () => {
+        alert(`Thanks for subscribing, ${emailInput.value}!`);
+      });
+    });
+  </script>
+  <!---profile picture and info--->
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <img src="profile.jpg" alt="Profile Picture">
+      <h1><b>Maximus Weeseman</b></h1>
+      <p style="color: #33ffad;"><b>hello!</b></p>
+      <p style="color: #ffffff;"> 📪 Email me at<b><p style="color: #33ffad;">mxw30@scasd.org</b></p>
+<div class="box">
+<p><b>welcome to my blog</p>
+      <div class="tags">
+        <div class="tag"><b><i>&nbsp&nbsp&nbsp&nbsp&nbsp</i></b></div>
+          <div class="tag2"><b><i>&nbsp&nbsp&nbsp&nbsp&nbsp</i></b></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="right"> <!---VERY IMPORTANT. NEW POSTS GO UNDER THE <div class="right"> for code to work properly. Put new posts here 🢃🢃🢃 ---> 
+     <div class="right">
+  <div class="post">
+    <h2><b>Just for ✨fun✨ update!</b></h2>
+    <p style="color: #889E9E;"><b>added some fun stuff to the blog! go ahead, read about it</b></p>
+    <p class="expanded-paragraph">As implied by the title (and the description), I added some fun little quirks and details to this site. First of all, look at the tags on this post. See anything different? Thats right! The tags are different colors! Isn't that so much prettier than the drab, repetitive brown from a week ago? Not only that, but you might have also noticied a new tag, called <b>"𝙎𝙮𝙣𝙩𝙖𝙭𝙀𝙧𝙧𝙤𝙧"</b> at the bottom of this post. We'll get to that in a minute. Secondly, you may have noticed that when you click anywhere on the main blog page a burst of rainbow dots explodes from your cursor. Pretty cool huh? Now scroll down to the bottom of the main page and click somewhere. Uh-oh. What just happened? Well, I am not well versed in Javascript. This lead me to making bad code. This bad code just executed the problem you just saw, and this error right here: </p>
+    <p><b>Jan 18, 2024 • ⏰3 min read</b></p>
+    <div class="tags">
+      <div class="tag4"><b><i>&nbspupdate!&nbsp</i>📣</b></div>
+      <div class="tag2"><b><i>&nbspjust for fun :)&nbsp</i></b></div>
+       <div class="tag3"><b><i>&nbspSyntaxError </i>✖</b></div>
+    </div>
+  </div>
+  
+  <div class="post">
+    <h2><b>Most recent posts are now at the top</b></h2>
+    <p style="color: #889E9E;"><b>self explanatory i think</b></p>
+    <p class="expanded-paragraph">Now when I post something new the new post will be at the top!</p>
+    <p><b>Jan 10, 2024 • ⏰1 min read</b></p>
+    <div class="tags">
+      <div class="tag4"><b><i>&nbspupdate!&nbsp</i>📣</b></div>
+    </div>
+  </div>
+  
+  <div class="post">
+    <h2><b>tags are working, kinda</b></h2>
+    <p style="color: #889E9E;"><b>at least they look good</b></p>
+    <p class="expanded-paragraph">While I was working on this blog I realized that my blog didn't have one of a quality blogs most important elements: tags.</p>
+    <p><b>Jan 9, 2024 • ⏰1 min read</p>
+    <div class="tags">
+      <div class="tag4"><b><i>&nbspupdate!&nbsp</i>📣</b></div>
+      <div class="tag2"><b><i>&nbspjust for fun :)&nbsp</i></b></div>
+    </div>
+  </div>
+  
+  <div class="post">
+    <h2><b>i made a blog :3</b></h2>
+    <p style="color: #889E9E;"><b>wanna know why?</b></p>
+    <p class="expanded-paragraph">After reading "How To Be A High School Superstar" by <a href="https://calnewport.com/">Cal Newport</a>
+ I came to the conclusion that all "high school superstars" have their own blogs, books, and in some cases, their own companies and startups.</p>
+    <p><b>Jan 9, 2024 • ⏰2 min read</b></p>
+    <div class="tags">
+      <div class="tag"><i><b>&nbsplife&nbsp</b></i><b>ಠ_ಠ&nbsp</b></div>
+    </div>
+  </div>
+</div>
+
+<script src="filesystem:https://webmaker.app/temporary/script.js">
+</script>
+</body>
+</html>
