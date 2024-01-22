@@ -1,17 +1,43 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8" />
-
-<style id="webmakerstyle">
-
-</style>
-</head>
-<body>
 <html>
 <head>
   
 <style>
+  
+.contact-box {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.7), 0 0 9px rgba(255, 255, 255, 0.5);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.contact-box:hover {
+  transform: scale(1.05);
+}
+
+.contact-box img {
+  width: 150px;
+  height: 150px;
+  border-radius: 80%;
+  box-shadow: 0 0 7.3px #ccc;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 1.2));
+  transition: transform 0.3s ease-in-out;
+}
+
+.contact-box img:hover {
+  transform: scale(1.02);
+}
+
+.contact-box img:active {
+  transform: scale(0.7);
+}
+
+.contact-box p:not(:last-child) {
+  color: #ffc0cb;
+  font-weight: normal;
+}
+
   body {
     background-color: black;
   }
@@ -21,6 +47,12 @@
     left: 0;
     z-index: -1;
   }
+   .logo {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+  
 </style>
 </head>
 <!---Particle firework like exploision code. typerror somewhere here?? needs heavy fixing, sometimes the exploision won't be on the cursor location. 🢃🢃🢃 --->
@@ -61,14 +93,14 @@
         this.velocity.y *= 0.99;
         this.x += this.velocity.x;
         this.y += this.velocity.y;
-        this.alpha -= 0.011;
+        this.alpha -= 0.008;
       }
     }
     window.addEventListener('click', function(event) {
       const x = event.clientX;
       const y = event.clientY;
-      for (let i = 0; i < 45; i++) {
-        const radius = Math.random() * 2.5;
+      for (let i = 0; i < 50; i++) {
+        const radius = Math.random() * 2.65;
         const color = randomColor(colors);
         const velocity = {
           x: (Math.random() - 0.5) * (Math.random() * 5),
@@ -117,6 +149,7 @@ a:active {
 </style>
 <!---Defining everthing 🢃🢃🢃 --->
   <style>
+    
     body {
       background-color: #2a2b2e;
       color: #fff;
@@ -152,6 +185,7 @@ a:active {
       position: relative; 
       z-index: 1; 
       cursor: pointer; 
+      
     }
 
     .post:hover {
@@ -159,53 +193,56 @@ a:active {
       box-shadow: 0 0 12.5px #ccc; 
     }
 
-    .post.huge { 
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 999;
-      background-color: #2a2b2e;
-      border: none;
-      border-radius: 0;
-      padding: 20px;
-      box-sizing: border-box;
-      overflow-y: auto;
-    }
+.post.huge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background-color: #2a2b2e;
+  border: none;
+  border-radius: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  
+}
 
-    .post.huge h2 {
-      font-size: 36px;
-      margin-bottom: 10px;
-      color: #fff; 
-      font-weight: normal;
-    }
+.post.huge h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #fff;
+  font-weight: normal;
+  text-align: center; /* Added text-align center */
+}
 
-    .post.huge p:first-child {
-      color: #ffffff; 
-      font-size: 16px;
-      margin-bottom: 10px;
-      font-weight: normal;
-    }
+.post.huge p:first-child,
+.post.huge p:last-child,
+.post.huge .expanded-paragraph {
+  color: #ffffff;
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: normal;
+  text-align: center; /* Added text-align center */
+}
 
-    .post.huge p:last-child {
-      color: #ffffff; 
-      font-size: 16px;
-      font-weight: normal;
-    }
-
-    .post.huge .expanded-paragraph {
-      display: block;
-      border: 1px solid #ccc; 
-      padding: 10px; 
-      border-radius: 5px; 
-      box-shadow: 0 0 4px #ffffff; 
-      background-color: rgba(100, 100, 100, 0.2); 
-      text-align: left; 
-      font-weight: normal;
-      margin-top: 10px; 
-      width: fit-content; 
-    }
+.post.huge .expanded-paragraph {
+  display: block;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 4px #ffffff;
+  background-color: rgba(100, 100, 100, 0.2);
+  text-align: left;
+  font-weight: normal;
+  margin-top: 10px;
+  width: 500px;
+}
 
     .left img {
       width: 150px;
@@ -283,6 +320,7 @@ a:active {
       font-weight: normal
         ;
     }
+    
   </style>
 <!---Script for post opening. DO NOT MESS WITH. 🢃🢃🢃 --->
   <script>
@@ -300,44 +338,66 @@ a:active {
           }
         });
       });
-<!---uneeded code thatis causing typerror, but can't be removed or posts can't be opened ;(--->
+<!---uneeded code that is causing typerror, but can't be removed or posts can't be opened ;(--->
       subscribeButton.addEventListener('click', () => {
         alert(`Thanks for subscribing, ${emailInput.value}!`);
       });
     });
   </script>
-  <!---profile picture and info--->
+  <!---gradient--->
 </head>
+  
 <body>
+  
   <div class="container">
     <div class="left">
+      <style>
+        
+  body {
+    background: linear-gradient(to right, #2a2b2e, #394049);
+    color: #fff;
+    font-family: 'Varela Round', Arial, sans-serif;
+    font-weight: normal;
+  }
+</style>
+<!---profile picture and info--->
       <img src="profile.jpg" alt="Profile Picture">
       <h1><b>Maximus Weeseman</b></h1>
-      <p style="color: #33ffad;"><b>hello!</b></p>
-      <p style="color: #ffffff;"> 📪 Email me at<b><p style="color: #33ffad;">mxw30@scasd.org</b></p>
-<div class="box">
-<p><b>welcome to my blog</p>
-      <div class="tags">
-        <div class="tag"><b><i>&nbsp&nbsp&nbsp&nbsp&nbsp</i></b></div>
-          <div class="tag2"><b><i>&nbsp&nbsp&nbsp&nbsp&nbsp</i></b></div>
+      
+      <p style="color: #e580ff;"><b>hello! </b></p>
+      
+      <div class="contact-box"
+           <div class="tags">
+      <div class="tag4"><b>&nbsp📪 Email me about anything! &nbsp</b></div>
+      <p style="color: #ffffff;"> <b><p style="color: #33ffad;">➼&nbspmweeseman@gmail.com</b></p>
+    <div class="tags">
+      <div class="tag2"><b>&nbsp📂 Find my GitHub & projects&nbsp&nbsp</b></div>
         </div>
+<div class="box">
+  <p style="color: #ffffff;"> <b><p
+<p><b>➼ <a href="https://github.com/maximusweeseman">here</a></p>
+    </b>
       </div>
     </div>
-
+  </div>
     <div class="right"> <!---VERY IMPORTANT. NEW POSTS GO UNDER THE <div class="right"> for code to work properly. Put new posts here 🢃🢃🢃 ---> 
      <div class="right">
-  <div class="post">
-    <h2><b>Just for ✨fun✨ update!</b></h2>
-    <p style="color: #889E9E;"><b>added some fun stuff to the blog! go ahead, read about it</b></p>
-    <p class="expanded-paragraph">As implied by the title (and the description), I added some fun little quirks and details to this site. First of all, look at the tags on this post. See anything different? Thats right! The tags are different colors! Isn't that so much prettier than the drab, repetitive brown from a week ago? Not only that, but you might have also noticied a new tag, called <b>"𝙎𝙮𝙣𝙩𝙖𝙭𝙀𝙧𝙧𝙤𝙧"</b> at the bottom of this post. We'll get to that in a minute. Secondly, you may have noticed that when you click anywhere on the main blog page a burst of rainbow dots explodes from your cursor. Pretty cool huh? Now scroll down to the bottom of the main page and click somewhere. Uh-oh. What just happened? Well, I am not well versed in Javascript. This lead me to making bad code. This bad code just executed the problem you just saw, and this error right here: </p>
-    <p><b>Jan 18, 2024 • ⏰3 min read</b></p>
-    <div class="tags">
-      <div class="tag4"><b><i>&nbspupdate!&nbsp</i>📣</b></div>
-      <div class="tag2"><b><i>&nbspjust for fun :)&nbsp</i></b></div>
-       <div class="tag3"><b><i>&nbspSyntaxError </i>✖</b></div>
-    </div>
+<div class="post">
+  <h2><b>Just for ✨fun✨ update!</b></h2>
+  <p style="color: #889E9E;"><b>added some fun stuff to the blog! go ahead, read about it</b></p>
+  <p class="expanded-paragraph">As implied by the title (and the description), I added some fun little quirks and details to this site. First of all, take a peek at the tags on this post. See anything different? The tags are different colors! Not a huge change, but I think it adds some life to the site :)&nbsp</p>
+  <!-- second paragraph -->
+  <p class="expanded-paragraph">Secondly, you may have  noticed a new tag called <b><i>"SyntaxError"</i></b> at the bottom of this post. We'll get to that in a minute. The cool thing is that now when you click anywhere on the main blog page a burst of rainbow dots explodes from your cursor. Pretty cool huh? Now scroll down to the bottom of the page and click somewhere. Uh-oh. What just happened? Well, I am not well versed in Javascript. This led me to making bad code. This bad code just executed the problem you just saw, and this error right here:</p>
+  <p><b>Jan 18, 2024 • ⏰5 min read</b></p>
+  <div class="tags">
+    <div class="tag4"><b><i>&nbspupdate!&nbsp</i>📣</b></div>
+    <div class="tag2"><b><i>&nbspjust for fun :)&nbsp</i></b></div>
+    <div class="tag3"><b><i>&nbspSyntaxError </i>✖</b></div>
   </div>
-  
+</div>
+
+<!---another post-->
+       
   <div class="post">
     <h2><b>Most recent posts are now at the top</b></h2>
     <p style="color: #889E9E;"><b>self explanatory i think</b></p>
@@ -358,7 +418,7 @@ a:active {
       <div class="tag2"><b><i>&nbspjust for fun :)&nbsp</i></b></div>
     </div>
   </div>
-  
+<!---another post--->
   <div class="post">
     <h2><b>i made a blog :3</b></h2>
     <p style="color: #889E9E;"><b>wanna know why?</b></p>
@@ -370,8 +430,3 @@ a:active {
     </div>
   </div>
 </div>
-
-<script src="filesystem:https://webmaker.app/temporary/script.js">
-</script>
-</body>
-</html>
