@@ -1,13 +1,179 @@
+<!DOCTYPE html>
 <html>
 <head>
+<body>
+ <div class="toggle-container">
+    <div class="toggle-box">
+      <button id="toggleButton">Toggle</button>
+      <button id="untoggleButton">Untoggle</button>
+    </div>
+  </div>
+  </body>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggleButton = document.getElementById('toggleButton');
+    const body = document.body;
+
+    toggleButton.addEventListener('click', function () {
+      body.classList.toggle('gradient-active');
+    });
+  });
+   document.addEventListener('DOMContentLoaded', function () {
+      const toggleButton = document.getElementById('toggleButton');
+      const untoggleButton = document.getElementById('untoggleButton');
+      const body = document.body;
+
+      toggleButton.addEventListener('click', function () {
+        body.classList.add('gradient-active');
+      });
+
+      untoggleButton.addEventListener('click', function () {
+        body.classList.remove('gradient-active');
+      });
+    });
+</script>
 
 <style>
- 
+ body.gradient-active {
+  background: linear-gradient(to right, #2a2b2e, #394049); 
+   
+}
+  body.gradient-active .post {
+  box-shadow: 0 -0.5px 0px, 0 0 2px, 0 0 1em #ffffff, 0 0 0.5em #ffffff, 0 0 0.1em #ffffff, 0 9px 3px #000;
+    
+}
+  body.gradient-active .tag {
+      background-color: #ffff99;
+      color: #665200;
+      font-size: 13px;
+      padding: 6px;
+      border-radius: 60px;
+      font-weight: normal;
+      box-shadow: none;
+}
+  
+  body.gradient-active .post.huge {
+      background: linear-gradient(to right, #2a2b2e, #394049);
+  }
+  body.gradient-active .tag2 {
+      background-color: #759aff;
+      color: #002999;
+      font-size: 13px;
+      padding: 6px;
+      border-radius: 60px;
+      font-weight: normal; 
+      box-shadow: none;
+  }
+  
+    body.gradient-active .tag3 {
+      background-color: #ff80aa;
+      color: #80002a;
+      font-size: 13px;
+      padding: 6px;
+      border-radius: 60px;
+      font-weight: normal;
+      box-shadow: none;
+  }
+  
+      body.gradient-active .tag4 {
+      background-color: #80ffcc;
+      color: #004d2e;
+      font-size: 13px;
+      padding: 6px;
+      border-radius: 60px;
+      font-weight: normal;
+      box-shadow: none;
+  }
+  
+      body.gradient-active .tag5 {
+      background-color: #ff99ff;
+      color: #800080;
+      font-size: 13px;
+      padding: 6px;
+      border-radius: 60px;
+      font-weight: normal;
+      box-shadow: none;
+  }
+  
+      body.gradient-active .tag6 {
+      background-color: #80dfff;
+      color: #004d66;
+      font-size: 13px;
+      padding: 6px;
+      border-radius: 60px;
+      font-weight: normal;
+      box-shadow: none;
+  }
+  
+      body.gradient-active .tag7 {
+      background-color: #ffcce6;
+      color: #800042;
+      font-size: 13px;
+      padding: 6px;
+      border-radius: 60px;
+      font-weight: normal;
+      box-shadow: none;
+  }
+  
+      .toggle-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 15px; /* Adjust as needed */
+    }
+
+    .toggle-box {
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.7), 0 0 21px rgba(255, 255, 255, 0.5);
+      margin-bottom: 20px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .toggle-box:hover {
+      transform: scale(1);
+    }
+
+  #toggleButton,
+  #untoggleButton {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #4CAF50; /* Green background color */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+  
+  /* Hover effect for both buttons */
+  #toggleButton:hover,
+  #untoggleButton:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: scale(1.05); /* Enlarge on hover */
+  }
+
+  /* Container styles */
+  .toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px; /* Adjust as needed */
+  }
+
+
 .contact-box {
   border: 1px solid #ccc;
   padding: 15px;
-  border-radius: 7px;
-  box-shadow: 0 0 3px rgba(255, 255, 255, 0.7), 0 0 9px rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7), 0 0 21px rgba(255, 255, 255, 0.5);
   margin-bottom: 20px;
   transition: transform 0.3s ease-in-out;
 }
@@ -20,9 +186,9 @@
   width: 150px;
   height: 150px;
   border-radius: 80%;
-  box-shadow: 0 0 7.3px #ccc;
   filter: drop-shadow(0 0 5px rgba(0, 0, 0, 1.2));
   transition: transform 0.3s ease-in-out;
+  box-shadow: 0 -1px 15px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 2px 3px #000;
 }
 
 .contact-box img:hover {
@@ -124,7 +290,7 @@
   </script>
 
 <head>
-  <title>blog.maximusweeseman</title>
+  <title>blog-maximusweeseman</title>
   <style>
 a:link {
   color: deepskyblue;
@@ -172,25 +338,26 @@ a:active {
     .right {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap:30px;
       padding-left: 10px;
     }
 
     .post {
       border: 1.5px solid #ccc;
-      padding: 13px;
-      border-radius: 6px;
-      box-shadow: 0 0 7.3px #ccc;
+      padding: 14px;
+      border-radius: 8px;
+      box-shadow: 0 -0.5px 10px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
       transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
       position: relative;
       z-index: 1;
       cursor: pointer;
+      
      
     }
 
     .post:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 12.5px #ccc;
+      box-shadow: 0 -1px 15px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 2px 3px #000;
     }
 
 .post.huge {
@@ -204,12 +371,13 @@ a:active {
   width: 100%;
   height: 100%;
   z-index: 999;
-  background-color: #2a2b2e;
+  background-color: #21222c;
   border: none;
   border-radius: 0;
   padding: 20px;
   box-sizing: border-box;
   overflow-y: auto;
+  margin-top: 0px;
  
 }
 
@@ -219,6 +387,7 @@ a:active {
   color: #fff;
   font-weight: normal;
   text-align: center;
+
     }
 
 .post.huge p:first-child,
@@ -229,6 +398,24 @@ a:active {
   margin-bottom: 10px;
   font-weight: normal;
   text-align: center;
+  margin-top: 50px;
+}
+    
+.post-title {
+margin-top: 0px;
+}
+
+/* Add margin when post has "huge" class */
+.post.huge .post-title {
+  margin-top: 120px;
+}
+    .post-title2 {
+margin-top: 0px;
+}
+
+/* Add margin when post has "huge" class */
+.post.huge .post-title2 {
+  margin-top: 500px;
 }
 
 .post.huge .expanded-paragraph {
@@ -243,6 +430,7 @@ a:active {
   margin-top: 10px;
   width:530px;
   border-radius: 6.5px;
+  
 }
 
     .left img {
@@ -275,62 +463,69 @@ a:active {
     .tags {
       display: flex;
       justify-content: flex-start;
-      gap: 5px;
-      margin-top: 10px;
+      gap: 12px;
+      margin-top: 20px;
+      margin-bottom: 5px; 
     }
 
     .tag {
-      background-color: #ffff99;
-      color: #665200;
+      background-color: #17181F;
+      color: #fff;
       font-size: 13px;
       padding: 6px;
       border-radius: 60px;
       font-weight: normal;
+      box-shadow: 0 0px 0px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.5em #ff4444, 0 10px 0px #000;
     }
    
 .tag2 {
-      background-color: #759aff;
-      color: #002999;
+      background-color: #17181F;
+      color: #fff;
       font-size: 13px;
       padding: 6px;
       border-radius: 60px;
       font-weight: normal;
+      box-shadow: 0 0px 0px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.5em #ff4444, 0 10px 3px #000;
     }
        
 .tag3 {
-      background-color: #ff80aa;
-      color: #80002a;
+      background-color: #17181F;
+      color: #fff;
       font-size: 13px;
       padding: 6px;
       border-radius: 60px;
       font-weight: normal;
+      box-shadow: 0 0px 0px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.5em #ff4444, 0 10px 3px #000;
     }
    
     .tag4 {
-      background-color: #80ffcc;
-      color: #004d2e;
+      background-color: #17181F;
+      color: #fff;
       font-size: 13px;
       padding: 6px;
       border-radius: 60px;
       font-weight: normal;
+      box-shadow: 0 0px 0px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.5em #ff4444, 0 10px 3px #000;
     }
    
     .tag5 {
-      background-color: #ff99ff;
-      color: #800080;
+      background-color: #17181F;
+      color: #fff;
       font-size: 13px;
       padding: 6px;
       border-radius: 60px;
       font-weight: normal;
+      box-shadow: 0 0px 0px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.5em #ff4444, 0 10px 3px #000;
     }
    
     .tag6{
-      background-color: #80dfff;
-      color: #004d66;
+      background-color: #17181F;
+      color: #fff;
       font-size: 13px;
       padding: 6px;
       border-radius: 60px;
       font-weight: normal;
+      box-shadow: 0 0px 0px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.5em #ff4444, 0 10px 3px #000;
     }
    
     .expanded-paragraph {
@@ -341,13 +536,85 @@ a:active {
     }
    
     .tag7{
-      background-color: #ffcce6;
-      color: #800042;
+      background-color: #17181F;
+      color: #fff;
       font-size: 13px;
       padding: 6px;
       border-radius: 60px;
       font-weight: normal;
+      box-shadow: 0 0px 0px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 .5em #ff4444, 0 10px 3px #000;
     }
+    
+<style>
+  @import url(//fonts.googleapis.com/css?family=Vibur);
+html,body{
+  height:100%
+}
+body {
+  background: #112 url(//images.weserv.nl/?url=i.imgur.com/6QJjYMe.jpg)  center no-repeat;
+  background-size:cover;
+  margin:0
+}
+.name {
+  text-align: left;
+  width: 25%;
+  height: 20px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+   user-select: none;
+}
+
+.logo b{
+  font: 200 8.2vh "Vibur";
+  color: #fee;
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
+}
+.logo b span{
+  animation: blink linear infinite 3s;
+}
+.logo b span:nth-of-type(2){
+  animation: blink linear infinite 20s;
+}
+@keyframes blink {
+  78% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  79%{
+     color: #333;
+  }
+  80% {
+    
+    text-shadow: none;
+  }
+  81% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  82% {
+    color: #333;
+    text-shadow: none;
+  }
+  83% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  92% {
+    color: #333;
+    text-shadow: none;
+  }
+  92.5% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+}
+
+</style>
+
   </style>
 <!---Script for post opening. DO NOT MESS WITH. 🢃🢃🢃 --->
   <script>
@@ -381,7 +648,7 @@ a:active {
       <style>
        
   body {
-    background: linear-gradient(to right, #2a2b2e, #394049);
+    background: linear-gradient(to right, #17181F, #2A2638);
     color: #fff;
     font-family: 'Varela Round', Arial, sans-serif;
     font-weight: normal;
@@ -389,15 +656,25 @@ a:active {
 </style>
 <!---profile picture and info--->
       <img src="profile.jpg" alt="Profile Picture">
-     
-      <h1><b>Maximus Weeseman</b></h1>
+ 
+      <div class="logo"><b>Ma<span>x</span>i<span>mu</span>s</b><br><b>W<span>e</span>es<span>e</span>ma<span>n</span></b>
+  
+      </div>
+      <br>
+<br>
+      <br>
+      <br>
+      <br>
+      <br>
      
       <p style="color: #e580ff;"><b>hello! 👋<p>Welcome to my personal blog! My name <br> is Maximus Weeseman, (but you can call <br> me Max ❤.) I write bad code, then write <br> about it. Check out my  other projects <br> on my <a href="https://github.com/maximusweeseman">Github Page</a> if you're <br> interested in any of my other work!</p></p>
      
       <div class="contact-box"
            <div class="tags">
       <div class="tag4"><b>&nbsp📪 Email me about anything! &nbsp</b></div>
+      
       <p style="color: #ffffff;"> <b><p style="color: #33ffad;">➼&nbspmweeseman@gmail.com</b></p>
+      <br>
     <div class="tags">
       <div class="tag2"><b>&nbsp📂 Find my GitHub &  projects&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b></div>
         </div>
@@ -405,14 +682,41 @@ a:active {
   <p style="color: #ffffff;"> <b><p
 <p><b>➼ <a href="https://github.com/maximusweeseman">here</a></p>
     </b>
-   
+  
       </div>
+      
     </div>
   </div>
     <div class="right"> <!---VERY IMPORTANT. NEW POSTS GO UNDER THE <div class="right"> for code to work properly. Put new posts here 🢃🢃🢃 --->
-     <div class="right">
+      <div class="right">
+        
+ <div class="post">
+   <div class="post.huge post-title2 ">
+  <h2><b>Bone mech with meat armor</b></h2>
+   </div>
+  <p style="color: #889E9E;"><b>do you have free will?</b></p>
+     <p class="expanded-paragraph">⚠️ 𝘽𝙚𝙛𝙤𝙧𝙚 𝙬𝙚 𝙨𝙩𝙖𝙧𝙩, 𝙠𝙚𝙚𝙥 𝙞𝙣 𝙢𝙞𝙣𝙙 𝙩𝙝𝙖𝙩 𝙩𝙝𝙞𝙨 𝙞𝙨 𝙟𝙪𝙨𝙩 𝙢𝙮 𝙩𝙖𝙠𝙚 𝙤𝙣 𝙩𝙝𝙚 𝙢𝙖𝙩𝙩𝙚𝙧, 𝙨𝙤 𝙩𝙖𝙠𝙚 𝙚𝙫𝙚𝙧𝙮𝙩𝙝𝙞𝙣𝙜 𝙬𝙧𝙞𝙩𝙩𝙚𝙣 𝙝𝙚𝙧𝙚 𝙬𝙞𝙩𝙝 𝙖 𝙜𝙧𝙖𝙞𝙣 𝙤𝙛 𝙨𝙖𝙡𝙩. ⚠️</p>
+   <p class="expanded-paragraph">You aren't a human. You are a floating brain, encased in alien fluids and calcium walls, operating an electricity and sugar powered bone mech with meat armor. </p>
+<p class="expanded-paragraph">But is this philosophical(?) conundrum actually true? Well, thats where it gets interesting.</p>
+ <!-- third paragraph -->
+  <p class="expanded-paragraph">In early 2019, the Future Minds Lab at UNSW School of Psychology conducted a very interesting experiment. The idea of the study was to explore whether you actively make choices or if the brain autonomously guides decision making without conscious involvement in the matter. You'd probably assume that your brain and the and body are connected, symbiotic, and utterly simultaneous in decision making and thoughts, but the study showed that that assumption is incorrect. </p>
+    <p class="expanded-paragraph">You see, the researchers discovered that the brain initiates decisions nearly 11 seconds before individuals become consciously aware of making them. This result is certainly interesting, but but what does it mean for you and me, the floating brains reading this post?</p> 
+   <p class="expanded-paragraph"> Well, buckle your seatbelts, grab your blankie, and get ready for an existential shock, because
+     you are <b><i>not the brain.</i></b></p>
+
+   <p class="expanded-paragraph">Yup. The study found that your brain makes the decisions 11 seconds before the thought became conscience, right? <i><b>Your brain.</b></i> Not you. You're the bone mech with meat armor, controlled with electricity and sugar by a benevolent chunk of tissue and fat. Think about that for while.</p>
+  <p><b>Jan 27, 2024 • ⏰ min read</b></p>
+         
+  <div class="tags">
+    <div class="tag"><b><i>&nbsplife </i>ಠ_ಠ&nbsp</b></div>
+    <div class="tag6"><b><i>&nbspshitpost&nbsp</i>❤️</b></div>
+    <div class="tag7"><b><i>&nbspimportant (?)&nbsp</i></b></div>
+  </div>
+</div>
        <div class="post">
+          <div class="post.huge post-title ">
   <h2><b>Buy me a coffee</b></h2>
+         </div>
   <p style="color: #889E9E;"><b>(im actually broke as hell) (pls help)</b></p>
   <p class="expanded-paragraph">Hi! If your on this site, you probably know who I am. If you don't, my name is Maximus Weeseman (but you can call me Max ❤️.) I'm a student developer aspiring to become a good (or at least half decent) full stack developer.
   <!-- second paragraph -->
@@ -429,7 +733,9 @@ a:active {
 </div>
        <!---another another post--->
 <div class="post">
+  <div class="post.huge post-title ">
   <h2><b>Just for ✨fun✨ update!</b></h2>
+  </div>
   <p style="color: #889E9E;"><b>added some fun stuff to the blog! go ahead, read about it</b></p>
   <p class="expanded-paragraph">As implied by the title (and the description), I added some fun little quirks and details to this site. First of all, take a peek at the tags on this post. See anything different? The tags are different colors! Not a huge change, but I think it adds some life to the site :)&nbsp</p>
   <!-- second paragraph -->
@@ -458,7 +764,7 @@ a:active {
   </div>
  
   <div class="post">
-    <h2><b>tags are working, kinda</b></h2>
+    <h2><b>Tags are working, kinda</b></h2>
     <p style="color: #889E9E;"><b>at least they look good</b></p>
     <p class="expanded-paragraph">While I was working on this blog I realized that my blog didn't have one of a quality blogs most important elements: tags. So I added them with a simple new div class that goes under the date and read time.</p>
     <p class="expanded-paragraph">The only issue is that the tags don't actually group different posts, they just look pretty. I'll fix it some other time, but for now, tags have been successfully added. (kinda). I'll work on adding functionality to the tags, but otherwise thats all for this post, so see you next time! Happy coding!</p>
@@ -471,7 +777,7 @@ a:active {
   </div>
 <!---another post--->
   <div class="post">
-    <h2><b>i made a blog :3</b></h2>
+    <h2><b>I made a blog :3</b></h2>
     <p style="color: #889E9E;"><b>wanna know why?</b></p>
     <p class="expanded-paragraph">After reading "How To Be A High School Superstar" by <a href="https://calnewport.com/">Cal Newport</a>
  I came to the conclusion that all "high school superstars" have their own blogs, books, and in some cases, their own companies and startups.</p>
@@ -523,3 +829,5 @@ body {
 }
     </style>
 
+</body>
+</html>
