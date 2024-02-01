@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8" />
+
+<style id="webmakerstyle">
+
+</style>
+</head>
+<body>
+<!DOCTYPE html>
+<html>
+<head>
 <body>
   
  <div class="toggle-container">
     <div class="toggle-box">
-      <button id="toggleButton">Toggle</button>
-      <button id="untoggleButton">Untoggle</button>
+      <p1><b>🇹​🇭​🇪​🇲​🇪​:&nbsp&nbsp</b></p1>
+      <button id="toggleButton">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+      <button id="untoggleButton">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
     </div>
   </div>
   </body>
@@ -35,6 +46,39 @@
 </script>
 
 <style>
+  
+  body.gradient-active .post.huge .expanded-paragraph {
+  display: block;
+  border: 0px solid #ccc;
+  padding: 11px;
+  border-radius: 0x;
+  box-shadow: 0 0 0px #ffffff;
+  background-color: rgba(100, 100, 100, 0.2);
+  text-align: left;
+  font-weight: normal;
+  margin-top: 10px;
+  width:530px;
+  border-radius: 6.5px;
+  }
+  
+  body.gradient-active .contact-box {
+  border: 2px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7), 0 0 21px rgba(255, 255, 255, 0.5);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+  
+  body.gradient-active .toggle-box {
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 -0.5px 0px, 0 0 2px, 0 0 1em #ffffff, 0 0 0.5em #ffffff, 0 0 0.1em #ffffff, 0 9px 3px #000;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease-in-out;
+    }
+  
  body.gradient-active {
   background: linear-gradient(to right, #2a2b2e, #394049); 
    
@@ -132,33 +176,59 @@
       border-radius: 8px;
       box-shadow: 0 0 15px rgba(255, 255, 255, 0.7), 0 0 21px rgba(255, 255, 255, 0.5);
       margin-bottom: 20px;
+      box-shadow: 0 -0.5px 10px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
       transition: transform 0.3s ease-in-out;
+      margin-right: 350px;
     }
 
     .toggle-box:hover {
       transform: scale(1);
+
     }
 
-  #toggleButton,
-  #untoggleButton {
-    padding: 10px 15px;
+  #toggleButton {
+    padding: 10px 9px;
     font-size: 16px;
-    background-color: #4CAF50; /* Green background color */
     color: white;
-    border: none;
+    border-color: fff;
+    background: linear-gradient(to right, #2a2b2e, #394049);
+     box-shadow: 0 -0.5px 0px, 0 0 2px, 0 0 1em #ffffff, 0 0 0.5em #ffffff, 0 0 0.1em #ffffff, 0 9px 3px #000;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    margin-right: 10px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 4px;
+  }
+  
+  #untoggleButton {
+    padding: 10px 9px;
+    font-size: 16px;
+    background-color: #17181F; 
+    color: white;
+    margin-right: 4px;
+    border-color: #17181F;
+     box-shadow: 0 -0.5px 10px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     border-radius: 8px;
     cursor: pointer;
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
   }
   
-  /* Hover effect for both buttons */
-  #toggleButton:hover,
+
+  #toggleButton:hover {
+    background-color: #17181F; 
+    transform: scale(1.07); 
+  }
+  
   #untoggleButton:hover {
-    background-color: #45a049; /* Darker green on hover */
-    transform: scale(1.05); /* Enlarge on hover */
+    background-color: #17181F; 
+    transform: scale(1.07); 
   }
 
-  /* Container styles */
+
   .toggle-container {
     display: flex;
     justify-content: center;
@@ -166,7 +236,8 @@
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 20px; /* Adjust as needed */
+    padding: 18px; /* Adjust as needed */
+    margin-right: 100px;
   }
 
 
@@ -174,13 +245,16 @@
   border: 1px solid #ccc;
   padding: 15px;
   border-radius: 8px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7), 0 0 21px rgba(255, 255, 255, 0.5);
   margin-bottom: 20px;
   transition: transform 0.3s ease-in-out;
+   box-shadow: 0 -0.5px 10px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .contact-box:hover {
   transform: scale(1.05);
+  box-shadow: 0 -0.5px 10px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .contact-box img {
@@ -189,7 +263,7 @@
   border-radius: 80%;
   filter: drop-shadow(0 0 5px rgba(0, 0, 0, 1.2));
   transition: transform 0.3s ease-in-out;
-  box-shadow: 0 -1px 15px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 2px 3px #000;
+
 }
 
 .contact-box img:hover {
@@ -425,7 +499,7 @@ margin-top: 0px;
   padding: 11px;
   border-radius: 0x;
   box-shadow: 0 0 0px #ffffff;
-  background-color: rgba(100, 100, 100, 0.2);
+  background-color: #2E2E40;
   text-align: left;
   font-weight: normal;
   margin-top: 10px;
@@ -668,7 +742,7 @@ body {
       <br>
       <br>
      
-      <p style="color: #e580ff;"><b>hello! 👋<p>Welcome to my personal blog! My name <br> is Maximus Weeseman, (but you can call <br> me Max ❤.) I write bad code, then write <br> about it. Check out my  other projects <br> on my <a href="https://github.com/maximusweeseman">Github Page</a> if you're <br> interested in any of my other work!</p></p>
+      <p style="color: #e580ff;"><b>hello! 👋<p>Welcome to my personal blog! <br>My name is Maximus Weeseman,<br> (but you can call me Max ❤.) <br> I write bad code, then write <br>about it. Check out my <br>other projects on my <a href="https://github.com/maximusweeseman">Github Page</a> <br>if you're interested in seeing <br>some of my other work!</p></p>
      
       <div class="contact-box"
            <div class="tags">
@@ -705,7 +779,7 @@ body {
    <p class="expanded-paragraph"> Well, buckle your seatbelts, grab your blankie, and get ready for an existential shock, because
      you are <b><i>not the brain.</i></b></p>
 
-   <p class="expanded-paragraph">Yup. The study found that your brain makes the decisions 11 seconds before the thought became conscience, right? <i><b>Your brain.</b></i> Not you. You're the bone mech with meat armor, controlled with electricity and sugar by a benevolent chunk of tissue and fat. Think about that for while. If you're interested in reading more, check out the official article <a href="https://newsroom.unsw.edu.au/news/science-tech/our-brains-reveal-our-choices-we%E2%80%99re-even-aware-them-study">here</a>, and in mean time, Weeseman out! Happy coding!</p>
+   <p class="expanded-paragraph">Yup. The study found that your brain makes the decisions 11 seconds before the thought became conscience, right? <i><b>Your brain.</b></i> Not you. You're the bone mech with meat armor, controlled with electricity and sugar by a benevolent chunk of tissue and fat. Think about that for while. If you're interested in reading more, check out the official article <a href="https://newsroom.unsw.edu.au/news/science-tech/our-brains-reveal-our-choices-we%E2%80%99re-even-aware-them-study">here</a>. In the mean time, Weeseman out! Happy coding!</p>
   <p><b>Jan 27, 2024 • ⏰ min read</b></p>
          
   <div class="tags">
@@ -719,7 +793,7 @@ body {
   <h2><b>Buy me a coffee</b></h2>
          </div>
   <p style="color: #889E9E;"><b>(im actually broke as hell) (pls help)</b></p>
-  <p class="expanded-paragraph">Hi! If your on this site, you probably know who I am. If you don't, my name is Maximus Weeseman (but you can call me Max ❤️.) I'm a student developer aspiring to become a good (or at least half decent) full stack developer.
+  <p class="expanded-paragraph">Hi! If you're on this site, you probably know who I am. If you don't, my name is Maximus Weeseman (but you can call me Max ❤️.) I'm a student developer aspiring to become a good (or at least half decent) full stack developer.
   <!-- second paragraph -->
   <p class="expanded-paragraph">I'm also flat out broke.</p>
  <!-- third paragraph -->
@@ -830,5 +904,10 @@ body {
 }
     </style>
 
+</body>
+</html>
+
+<script src="filesystem:https://webmaker.app/temporary/script.js">
+</script>
 </body>
 </html>
