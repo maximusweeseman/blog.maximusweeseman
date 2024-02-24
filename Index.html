@@ -2,23 +2,16 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-
-<style id="webmakerstyle">
-
-</style>
 </head>
 <body>
-<!DOCTYPE html>
-<html>
-<head>
-<body>
-  
+
  <div class="toggle-container">
     <div class="toggle-box">
-      <p1><b>🇹​🇭​🇪​🇲​🇪​:&nbsp&nbsp</b></p1>
-      <button id="toggleButton">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
-      <button id="untoggleButton">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
       
+      <button id="toggleButton"></button>
+      <button id="untoggleButton"></button>
+
+      <button id="settingsButton"></button>
     </div>
   </div>
   </body>
@@ -45,8 +38,249 @@
       });
     });
 </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const settingsButton = document.getElementById('settingsButton');
+    const body = document.body;
+
+    settingsButton.addEventListener('click', function () {
+      body.classList.toggle('red');
+    });
+  });
+   document.addEventListener('DOMContentLoaded', function () {
+      const toggleButton = document.getElementById('settingButton');
+      const untoggleButton = document.getElementById('untoggleButton');
+      const body = document.body;
+
+      settingsButton.addEventListener('click', function () {
+        body.classList.add('red');
+      });
+     
+     settingsButton.addEventListener('click', function () {
+        body.classList.remove('gradient-active');
+      });
+
+      untoggleButton.addEventListener('click', function () {
+        body.classList.remove('red');
+      });
+    });
+</script>
 
 <style>
+  
+  /*also here V*/
+  
+    body.red .name {
+  text-align: left;
+  width: 15%;
+  height: 20px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+   user-select: none;
+}
+  
+  body.red .logo b{
+  font: 200 8.2vh "Vibur";
+  color: #ffffff;
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff66ff, 0 0 0.5em #ff66ff, 0 0 0.1em #ff66ff, 0 10px 3px #000;
+}
+  
+ body.red .logo b span{
+  animation: blink linear infinite 3s;
+}
+body.red .logo b span:nth-of-type(2){
+  animation: blink linear infinite 20s;
+}
+  
+  /*here ^ */
+  
+  body.red .tags {
+      display: flex;
+      justify-content: flex-start;
+      gap: 9px;
+      margin-top: 20px;
+      margin-bottom: 5px; 
+    }
+  
+  body.red .post.huge .expanded-paragraph {
+  display: block;
+  border: 0px solid #ccc;
+  padding: 11px;
+  border-radius: 0x;
+  box-shadow: 0 0 0px #ffffff;
+  background-color: #402b55;
+  text-align: left;
+  font-weight: normal;
+  margin-top: 10px;
+  width:530px;
+  border-radius: 6.5px;
+  }
+  
+  body.red .contact-box {
+  border: .1px solid #e180ff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 -0.5px 10px, 0 0 0px, 0 0 1em #ac00e6, 0 0 0em #ac00e6, 0 0 0em #ac00e6, 0 10px 3px #000;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+  
+  body.red .toggle-box {
+      border: 1.4px solid #e180ff;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 -0.5px 10px, 0 0 0px, 0 0 1em #ac00e6, 0 0 0em #ac00e6, 0 0 0em #ac00e6, 0 10px 3px #000;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease-in-out;
+      background-color: rgba(100, 100, 100, 0.2);
+      margin-top: 0px;
+    }
+  
+ body.red {
+  background: linear-gradient(to right, #2d2640, #3a3153); 
+   
+}
+  body.red .post {
+  box-shadow: 0 -0.5px 10px, 0 0 0px, 0 0 1em #ac00e6, 0 0 0em #ac00e6, 0 0 0em #ac00e6, 0 10px 3px #000;
+  padding: 14px;
+  margin-left: -2px;
+  border: .1px solid #e180ff;
+    
+}
+  body.red .tag {
+      background-color: #ff99ff;
+      color: #4d004d;
+      font-size: 13px;
+      padding: 6px;
+      border-radius: 60px;
+      font-weight: normal;
+      box-shadow: 0 0px 0px, 0 7px 3px #000;
+      
+}
+  
+  body.red .post.huge {
+      background: #2d2640;
+  }
+  body.red .tag2 {
+      background-color: #ff99ff;
+      color: #4d004d;
+      font-size: 13px;
+      padding: 6px;
+      border-radius: 60px;
+      font-weight: normal; 
+box-shadow: 0 0px 0px, 0 7px 3px #000;
+  }
+  
+    body.red .tag3 {
+      background-color: #ff99ff;
+      color: #4d004d;
+      font-size: 13px;
+      padding: 6px;
+      border-radius: 60px;
+      font-weight: normal;
+      box-shadow: 0 0px 0px, 0 7px 3px #000;
+  }
+  
+      body.red .tag4 {
+      background-color: #ff99ff;
+      color: #4d004d;
+      font-size: 13px;
+      padding: 6px;
+      border-radius: 60px;
+      font-weight: normal;
+box-shadow: 0 0px 0px, 0 7px 3px #000;
+  }
+  
+      body.red .tag5 {
+      background-color: #ff99ff;
+      color: #4d004d;
+      font-size: 13px;
+      padding: 6px;
+      border-radius: 60px;
+      font-weight: normal;
+box-shadow: 0 0px 0px, 0 7px 3px #000;
+  }
+  
+      body.red .tag6 {
+      background-color: #ff99ff;
+      color: #4d004d;
+      font-size: 13px;
+      padding: 6px;
+      border-radius: 60px;
+      font-weight: normal;
+box-shadow: 0 0px 0px, 0 7px 3px #000;
+  }
+  
+      body.red .tag7 {
+      background-color: #ff99ff;
+      color: #4d004d;
+      font-size: 13px;
+      padding: 6px;
+      border-radius: 60px;
+      font-weight: normal;
+box-shadow: 0 0px 0px, 0 7px 3px #000;
+  }
+  
+        body.red .tag8 {
+      background-color: #ff99ff;
+      color: #4d004d;
+      font-size: 13px;
+      padding: 6px;
+      border-radius: 60px;
+      font-weight: normal;
+box-shadow: 0 0px 0px, 0 7px 3px #000;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  body.gradient-active .name {
+  text-align: left;
+  width: 15%;
+  height: 20px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+   user-select: none;
+}
+
+body.gradient-active .logo b{
+  font: 200 8.2vh "Vibur";
+  color: #ffffff;
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #99ffd6, 0 0 0.5em #99ffd6, 0 0 0.1em #99ffd6, 0 10px 3px #000;
+}
+body.gradient-active .logo b span{
+  animation: blink linear infinite 3s;
+}
+body.gradient-active .logo b span:nth-of-type(2){
+  animation: blink linear infinite 20s;
+}
+  
+  /*here ^ */
+  
+  body.gradient-active .tags {
+      display: flex;
+      justify-content: flex-start;
+      gap: 9px;
+      margin-top: 20px;
+      margin-bottom: 5px; 
+    }
   
   body.gradient-active .post.huge .expanded-paragraph {
   display: block;
@@ -54,7 +288,7 @@
   padding: 11px;
   border-radius: 0x;
   box-shadow: 0 0 0px #ffffff;
-  background-color: rgba(100, 100, 100, 0.2);
+  background-color: #3c3e44;
   text-align: left;
   font-weight: normal;
   margin-top: 10px;
@@ -78,7 +312,10 @@
       box-shadow: 0 -0.5px 0px, 0 0 2px, 0 0 1em #ffffff, 0 0 0.5em #ffffff, 0 0 0.1em #ffffff, 0 9px 3px #000;
       margin-bottom: 20px;
       transition: transform 0.3s ease-in-out;
+      margin-top: 0px;  
+    background-color: rgba(100, 100, 100, 0.2);
     }
+  
   
  body.gradient-active {
   background: linear-gradient(to right, #2a2b2e, #394049); 
@@ -86,20 +323,22 @@
 }
   body.gradient-active .post {
   box-shadow: 0 -0.5px 0px, 0 0 2px, 0 0 1em #ffffff, 0 0 0.5em #ffffff, 0 0 0.1em #ffffff, 0 9px 3px #000;
+  padding: 14px;
+  margin-left: -2px;
     
 }
   body.gradient-active .tag {
-      background-color: #ffff99;
-      color: #665200;
+      background-color: #d27979;
+      color: #4e1818;
       font-size: 13px;
       padding: 6px;
       border-radius: 60px;
       font-weight: normal;
-      box-shadow: none;
+      box-shadow: 0 0px 0px, 0 7px 3px #000;
 }
   
   body.gradient-active .post.huge {
-      background: linear-gradient(to right, #2a2b2e, #394049);
+      background: #2a2b2e;
   }
   body.gradient-active .tag2 {
       background-color: #759aff;
@@ -108,7 +347,7 @@
       padding: 6px;
       border-radius: 60px;
       font-weight: normal; 
-      box-shadow: none;
+box-shadow: 0 0px 0px, 0 7px 3px #000;
   }
   
     body.gradient-active .tag3 {
@@ -118,7 +357,7 @@
       padding: 6px;
       border-radius: 60px;
       font-weight: normal;
-      box-shadow: none;
+      box-shadow: 0 0px 0px, 0 7px 3px #000;
   }
   
       body.gradient-active .tag4 {
@@ -128,7 +367,7 @@
       padding: 6px;
       border-radius: 60px;
       font-weight: normal;
-      box-shadow: none;
+      box-shadow: 0 0px 0px, 0 7px 3px #000;
   }
   
       body.gradient-active .tag5 {
@@ -138,7 +377,7 @@
       padding: 6px;
       border-radius: 60px;
       font-weight: normal;
-      box-shadow: none;
+      box-shadow: 0 0px 0px, 0 7px 3px #000;
   }
   
       body.gradient-active .tag6 {
@@ -148,7 +387,7 @@
       padding: 6px;
       border-radius: 60px;
       font-weight: normal;
-      box-shadow: none;
+      box-shadow: 0 0px 0px, 0 7px 3px #000;
   }
   
       body.gradient-active .tag7 {
@@ -158,7 +397,17 @@
       padding: 6px;
       border-radius: 60px;
       font-weight: normal;
-      box-shadow: none;
+      box-shadow: 0 0px 0px, 0 7px 3px #000;
+  }
+  
+        body.gradient-active .tag8 {
+      background-color: #ffffb3;
+      color: #800042;
+      font-size: 13px;
+      padding: 6px;
+      border-radius: 60px;
+      font-weight: normal;
+      box-shadow: 0 0px 0px, 0 7px 3px #000;
   }
   
       .toggle-container {
@@ -168,19 +417,21 @@
       position: fixed;
       top: 0;
       width: 100%;
-      padding: 15px; /* Adjust as needed */
+      padding: 15px;
     }
 
     .toggle-box {
+      background-color: #2E2E40;
       border: 1px solid #ccc;
       padding: 10px;
       border-radius: 8px;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.7), 0 0 21px rgba(255, 255, 255, 0.5);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.7), 0 0          21px rgba(255, 255, 255, 0.5);
       margin-bottom: 20px;
       box-shadow: 0 -0.5px 10px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
-      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out, box-shadow         0.3s ease-in-out;
       transition: transform 0.3s ease-in-out;
       margin-right: 350px;
+      border-color: #ff9999;
     }
 
     .toggle-box:hover {
@@ -190,37 +441,64 @@
 
   #toggleButton {
     padding: 10px 9px;
-    font-size: 16px;
+    font-size: 12px;
     color: white;
     border-color: fff;
-    background: linear-gradient(to right, #2a2b2e, #394049);
-     box-shadow: 0 -0.5px 0px, 0 0 2px, 0 0 1em #ffffff, 0 0 0.5em #ffffff, 0 0 0.1em #ffffff, 0 9px 3px #000;
-    border-radius: 8px;
+    background: linear-gradient(to right, #2a2b2e,             #394049);
+    box-shadow: 0 -0.5px 0px, 0 0 2px, 0 0 1em #ffffff, 0 0     0.5em #ffffff, 0 0 0.1em #ffffff, 0 9px 3px #000;
+    border-radius: 100px;
     cursor: pointer;
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-    margin-right: 10px;
-    margin-top: 3px;
-    margin-bottom: 3px;
-    margin-left: 4px;
+    transition: transform 0.3s ease-in-out, background         color 0.3s ease-in-out;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+      height: 35px;
+  width: 35px;
   }
   
   #untoggleButton {
     padding: 10px 9px;
-    font-size: 16px;
+    font-size: 12px;
     background-color: #17181F; 
-    color: white;
-    margin-right: 4px;
+    color: #ff9999;
+    margin-right: 5px;
+    margin-left: 5px;
     border-color: #17181F;
      box-shadow: 0 -0.5px 10px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
       transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    border-radius: 8px;
+    border-radius: 40px;
     cursor: pointer;
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+          height: 35px;
+  width: 35px;
   }
   
+    #settingsButton {
+    padding: 10px 9px;
+    font-size: 12px;
+    background-color: #4d0066; 
+    color: white;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-color: #4d0066;
+     box-shadow: 0 -0.5px 10px, 0 0 2px, 0 0 1em #ac00e6, 0 0 0.5em #ac00e6, 0 0 0.1em #ac00e6, 0 10px 3px #000;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            height: 35px;
+  width: 35px;
+  }
 
+    #settingsButton:hover {
+    background-color: #4d0066; 
+    transform: scale(1.07); 
+  }
+  
+  
   #toggleButton:hover {
-    background-color: #17181F; 
+    background-color: #18191b; 
     transform: scale(1.07); 
   }
   
@@ -239,6 +517,7 @@
     width: 100%;
     padding: 18px; /* Adjust as needed */
     margin-right: 100px;
+          margin-top: 7px;
   }
 
 
@@ -250,12 +529,14 @@
   transition: transform 0.3s ease-in-out;
    box-shadow: 0 -0.5px 10px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border-color: #ff9999;
 }
 
 .contact-box:hover {
   transform: scale(1.05);
   box-shadow: 0 -0.5px 10px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border-color: #ff9999;
 }
 
 .contact-box img {
@@ -264,6 +545,7 @@
   border-radius: 80%;
   filter: drop-shadow(0 0 5px rgba(0, 0, 0, 1.2));
   transition: transform 0.3s ease-in-out;
+  
 
 }
 
@@ -290,15 +572,13 @@
     z-index: -1;
   }
    .logo {
-      width: 30px;
-      height: 30px;
+      width: 30%;
+      height: 20px;
       margin-right: 10px;
     }
  
 </style>
-</head>
-<!---Particle firework like exploision code. typerror somewhere here?? needs heavy fixing, sometimes the exploision won't be on the cursor location. 🢃🢃🢃 --->
-<body>
+<!---Particle firework like exploision code. typerror somewhere here?? needs heavy fixing, sometimes the exploision won't be on the cursor location. 🢃🢃🢃 -->
   <canvas id="canvas"></canvas>
   <script>
     const canvas = document.getElementById('canvas');
@@ -365,9 +645,9 @@
     animate();
   </script>
 
-<head>
   <title>blog-maximusweeseman</title>
   <style>
+    /*link colors*/
 a:link {
   color: deepskyblue;
   background-color: transparent;
@@ -389,7 +669,7 @@ a:active {
   text-decoration: underline;
 }
 </style>
-<!---Defining everthing 🢃🢃🢃 --->
+<!---Defining everthing 🢃🢃🢃 -->
   <style>
    
     body {
@@ -422,49 +702,50 @@ a:active {
       border: 1.5px solid #ccc;
       padding: 14px;
       border-radius: 8px;
-      box-shadow: 0 -0.5px 10px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
-      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      box-shadow: 0 -0.5px 10px, 0 0 2px, 0 0 1em #ff4444,       0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px           #000;
+      transition: transform 0.3s ease-in-out, box-shadow         0.3s ease-in-out;
       position: relative;
       z-index: 1;
       cursor: pointer;
+      border-color: #ff9999;
+      
       
      
     }
 
     .post:hover {
       transform: scale(1.05);
-      box-shadow: 0 -1px 15px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 2px 3px #000;
+      box-shadow: 0 -1px 15px, 0 0 2px, 0 0 1em #ff4444, 0       0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 2px 3px #000;
+      border-color: #ff9999;
     }
 
-.post.huge {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 999;
-  background-color: #21222c;
-  border: none;
-  border-radius: 0;
-  padding: 20px;
-  box-sizing: border-box;
-  overflow-y: auto;
-  margin-top: 0px;
- 
-}
+    .post.huge {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     z-index: 999;
+     background-color: #21222c;
+     border: none;
+     border-radius: 0;
+     padding: 20px;
+     box-sizing: border-box;
+     overflow-y: auto;
+     margin-top: 0px; 
+     }
 
-.post.huge h2 {
-  font-size: 36px;
-  margin-bottom: 10px;
-  color: #fff;
-  font-weight: normal;
-  text-align: center;
-
-    }
+    .post.huge h2 {
+     font-size: 36px;
+     margin-bottom: 10px;
+     color: #fff;
+     font-weight: normal;
+     text-align: center;
+     }
 
 .post.huge p:first-child,
 .post.huge p:last-child,
@@ -477,11 +758,19 @@ a:active {
   margin-top: 50px;
 }
     
+    .post.huge .code {
+  color: #b3ffff;
+  font-size: 17px;
+  margin-bottom: 10px;
+  font-weight: normal;
+  text-align: center;
+  margin-top: 50px;
+}
+    
 .post-title {
 margin-top: 0px;
 }
 
-/* Add margin when post has "huge" class */
 .post.huge .post-title {
   margin-top: 120px;
 }
@@ -489,7 +778,7 @@ margin-top: 0px;
 margin-top: 0px;
 }
 
-/* Add margin when post has "huge" class */
+
 .post.huge .post-title2 {
   margin-top: 500px;
 }
@@ -501,6 +790,20 @@ margin-top: 0px;
   border-radius: 0x;
   box-shadow: 0 0 0px #ffffff;
   background-color: #2E2E40;
+  text-align: left;
+  font-weight: normal;
+  margin-top: 10px;
+  width:530px;
+  border-radius: 6.5px;
+  
+}
+    
+    .post.huge .code {
+  display: block;
+  border: 0px solid #ccc;
+  padding: 13px;
+  box-shadow: 0 0 0px #ffffff;
+  background-color: #000;
   text-align: left;
   font-weight: normal;
   margin-top: 10px;
@@ -610,6 +913,12 @@ margin-top: 0px;
       font-weight: normal
         ;
     }
+    
+    .code {
+      display: none;
+      margin-top: 10px;
+      font-weight: normal;
+    }
    
     .tag7{
       background-color: #17181F;
@@ -621,19 +930,24 @@ margin-top: 0px;
       box-shadow: 0 0px 0px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 .5em #ff4444, 0 10px 3px #000;
     }
     
+        .tag8{
+      background-color: #17181F;
+      color: #fff;
+      font-size: 13px;
+      padding: 6px;
+      border-radius: 60px;
+      font-weight: normal;
+      box-shadow: 0 0px 0px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 .5em #ff4444, 0 10px 3px #000;
+    }
+    
 <style>
-  @import url(//fonts.googleapis.com/css?family=Vibur);
 html,body{
   height:100%
 }
-body {
-  background: #112 url(//images.weserv.nl/?url=i.imgur.com/6QJjYMe.jpg)  center no-repeat;
   background-size:cover;
-  margin:0
-}
 .name {
   text-align: left;
-  width: 25%;
+  width: 15%;
   height: 20px;
   margin: auto;
   position: absolute;
@@ -690,8 +1004,6 @@ body {
 }
 
 </style>
-
-  </style>
 <!---Script for post opening. DO NOT MESS WITH. 🢃🢃🢃 --->
   <script>
     window.addEventListener('DOMContentLoaded', () => {
@@ -715,9 +1027,6 @@ body {
     });
   </script>
   <!---background gradient--->
-</head>
- 
-<body>
  
   <div class="container">
     <div class="left">
@@ -743,7 +1052,7 @@ body {
       <br>
       <br>
      
-      <p style="color: #e580ff;"><b>hello! 👋<p>Welcome to my personal blog! <br>My name is Maximus Weeseman,<br> (but you can call me Max ❤.) <br> I write bad code, then write <br>about it. Check out my <br>other projects on my <a href="https://github.com/maximusweeseman">Github Page</a> <br>if you're interested in seeing <br>some of my other work!</p></p>
+      <p style="color: #e580ff;"><b>hello! 👋<p style="color: #fcffff;">Welcome to my personal blog! <br>My name is Maximus Weeseman,<br> (but you can call me Max ❤.) <br> I write bad code, then write <br>about it. Check out my <br>other projects on my <a href="https://github.com/maximusweeseman">Github Page</a> <br>if you're interested in seeing <br>some of my other work!</p></p>
      
       <div class="contact-box"
            <div class="tags">
@@ -768,6 +1077,44 @@ body {
         
  <div class="post">
    <div class="post.huge post-title2 ">
+  <h2><b>How to code a parallax effect with vanilla CSS <br> and JS</b></h2>
+   </div>
+  <p style="color: #889E9E;"><b>(fake 3D)</b></p>
+     <p class="expanded-paragraph">Hi! If you're here, you clearly want to learn the most sub-optimal way to make 3D(?) objects with Javascript.</p>
+   <p class="expanded-paragraph">You've come to the right place. </p>
+<p class="expanded-paragraph">Before we coding, we first have to understand what parallax actually is. Parallax is "the apparent displacement or the difference in apparent direction of an object as seen from two different points not on a straight line with the object." (<a href="https://www.merriam-webster.com/dictionary/parallax#dictionary-entry-1">Merriam Webster definition</a>.) It is usually used in context of the apparent shift of stars, where it stars seem to wander across the night sky. The ancient Greeks had a word for this phenominon, and on second thought, I don't care. Moving on.</p>
+ <!-- third paragraph -->
+   <p class="expanded-paragraph">First, start by creating a HTML in any text editor of your choice, whether its something fancy like VS Code or simple the notepad app doesn't matter. I named my file "Parallax Example," but  you can name it whatever you like. Create 4 div classes, named <b>.container</b>, <b>.foreground</b>, <b>.background</b>, and  <b>.overlay</b>. Make sure to use the <b>stylе</b> tag to tell your HTML document that you are inserting CSS, not just typing in HTML. The container will be the "back" part of the parallax, set in the background, and the overlay will be the "top" of the parallax, set in the foreground.</p>
+     <p class="expanded-paragraph">Set Heres what your code should look like so far.</p>
+
+   <p class="code"> 
+≮style> <br><br> 
+&nbsp&nbsp&nbsp&nbsp.container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+     <br><br>
+&nbsp&nbsp&nbsp&nbsp.background {
+    }
+          <br><br>
+&nbsp&nbsp&nbsp&nbsp.foreground {
+    }
+          <br><br>
+&nbsp&nbsp&nbsp&nbsp.overlay {
+    }
+          <br><br>
+≮style></p>
+  <p><b>Feb 20, 2024 • ⏰ 1 min read</b></p>
+         
+  <div class="tags">
+<div class="tag8"><b><i>&nbsptutorial </i>👍</b></div>
+    <div class="tag7"><b><i>&nbspimportant (?)&nbsp</i></b></div>
+  </div>
+</div>
+        
+ <div class="post">
+   <div class="post.huge post-title2 ">
   <h2><b>Bone mech with meat armor</b></h2>
    </div>
   <p style="color: #889E9E;"><b>do you have free will?</b></p>
@@ -781,7 +1128,7 @@ body {
      you are <b><i>not the brain.</i></b></p>
 
    <p class="expanded-paragraph">Yup. The study found that your brain makes the decisions 11 seconds before the thought became conscience, right? <i><b>Your brain.</b></i> Not you. You're the bone mech with meat armor, controlled with electricity and sugar by a benevolent chunk of tissue and fat. Think about that for while. If you're interested in reading more, check out the official article <a href="https://newsroom.unsw.edu.au/news/science-tech/our-brains-reveal-our-choices-we%E2%80%99re-even-aware-them-study">here</a>. In the mean time, Weeseman out! Happy coding!</p>
-  <p><b>Jan 27, 2024 • ⏰ min read</b></p>
+  <p><b>Jan 27, 2024 • ⏰ 3 min read</b></p>
          
   <div class="tags">
     <div class="tag"><b><i>&nbsplife </i>ಠ_ಠ&nbsp</b></div>
@@ -807,7 +1154,7 @@ body {
     <div class="tag7"><b><i>&nbspimportant (?)&nbsp</i></b></div>
   </div>
 </div>
-       <!---another another post--->
+       <!---another another post-->
 <div class="post">
   <div class="post.huge post-title ">
   <h2><b>Just for ✨fun✨ update!</b></h2>
@@ -851,7 +1198,7 @@ body {
       <div class="tag5"><b><i>&nbspminor issue&nbsp</i>🚩</b></div>
     </div>
   </div>
-<!---another post--->
+<!---another post-->
   <div class="post">
     <h2><b>I made a blog :3</b></h2>
     <p style="color: #889E9E;"><b>wanna know why?</b></p>
@@ -867,9 +1214,8 @@ body {
     </div>
   </div>
 </div>
-      <!---back to top button--->
+      <!---back to top button-->
         <a href="#" class="top">Back to Top &#8593;</a>
-</body>
   <style>
     body {
   display: grid;
@@ -905,10 +1251,6 @@ body {
 }
     </style>
 
-</body>
-</html>
-
-<script src="filesystem:https://webmaker.app/temporary/script.js">
-</script>
+      </head>
 </body>
 </html>
